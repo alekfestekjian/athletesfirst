@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="no">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Cache-control" content="public">
+	<meta name="description" content="Myodis Portal" />
+	<title>Myodis Portal</title>
+
+	<!-- CSS -->
+	<link href="css/core.css" rel="stylesheet" defer />
+
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" defer>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" defer>
+	
+	<!-- Line Awesome -->
+	<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" defer>
+
+
+
+</head>
+<body>
+
+	<header id="header">
+
+		<div id="header-bar" class="skin-inverted fixed">
+			<div class="page-width">
+				
+				<div id="header-bar-inner">
+
+					<!-- Header Logo -->
+					<div id="header-logo">
+						<a href="index.html" title="Click to Go Home">
+							<img src="images/theme/nwl/ncaa.png" alt="Logo" />
+							<!-- <span class="icon_logo_clipcards_knockout"></span> -->
+						</a>
+					</div>
+
+					<div id="header-menu-trigger">
+						<button type="button" class="btn-default btn-no-horizontal-padding" id="btn-toggle-nav" onclick="toggleNav();">
+							<span class="btn-icon"><i class="las la-bars"></i></span>
+							<span class="btn-text sr-only">Menu</span>
+						</button>
+					</div>
+
+					<div id="header-notifications">
+						<button type="button" class="btn-default" id="btn-toggle-notifications" onclick="togglenotification();" title="View Notifications">
+							<span class="btn-icon"><i class="las la-bell"></i></span>
+							<span class="btn-text sr-only">Menu</span>
+						</button>
+					</div>
+					
+					<!-- Navigation  -->
+					<div id="header-navigation" class="clearfix">
+						<div id="header-main-nav">
+							<ul>
+								<li><a class="nav-link" href="index.html">Home</a></li>
+								<li><a class="nav-link" href="my-cards.html">My Cards</a></li>
+								<li><a class="nav-link" href="store.html">Store</a></li>
+								<li><a class="nav-link selected" href="marketplace.html">Marketplace</a></li>
+								<li><a class="nav-link" href="faqs.html">FAQs</a></li>
+							</ul>
+						</div>
+
+						<div id="header-member-nav" style="display: none;">
+							<ul>
+								<li>
+									<button type="button" class="btn-default btn-outline" id="btn-login">
+										<span class="btn-text">Login</span>
+									</button>
+								</li>
+								<li>
+									<button type="button" class="btn-default btn-secondary" id="btn-register">
+										<span class="btn-text">Register</span>
+									</button>
+								</li>
+							</ul>
+						</div>
+
+
+
+						<!-- Members Area  -->
+						<div id="header-member" style="display: block;">
+							<div class="member-container">
+								<div class="member-link">
+									<a href="javascript:void(0);" class="member-link" onclick="toggleDropdown('member-options',this);">
+										<div class="member-avatar">
+											<img src="images/member/member-profile.jpg" alt="Profile Image" />
+										</div>
+										<div class="member-content">
+											<div class="member-name">Washfan82</div>
+											<div class="member-wallet">Balance: $0.00</div>
+										</div>
+									</a>
+								</div>
+								<div class="member-options" id="member-options" style="display: none;">
+									<ul>
+										<li><a href="my-cards.html">My Cards <span class="item-count">9</span></a></li>
+										<li><a href="my-packs.html">My Packs <span class="item-count">0</span></a></li>
+										<li><a href="my-challenges.html">Challenges <span class="item-count">3</span></a></li>
+										<li><a href="my-buying.html">Buying</a></li>
+										<li><a href="my-selling.html">Selling</a></li>
+										<li><a href="my-wallet.html">My Wallet</a></li>
+										<li><a href="my-profile.html">My Profile</a></li>
+										<li><a href="index.html">Logout</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div id="header-menu-close" class="hidden">
+							<button type="button" class="btn-default btn-no-horizontal-padding" id="btn-close-nav" onclick="toggleNav();">
+								<span class="btn-icon"><i class="las la-times"></i></span>
+								<span class="btn-text sr-only">Close</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</header>
+
+
+	<section id="page-background" class=""> <!-- add class "use-theme-color" -->
+		<div class="bg-color"></div>
+		<div class="bg-image"></div>
+		<div class="bg-accent-shadow-1"></div>
+		<div class="bg-accent-shadow-2"></div>
+		<div class="bg-accent-shadow-3"></div>
+		<div class="bg-shading"></div>
+	</section>
+
+	
+
+	<!-- Page Content -->
+	<section id="page-content">
+
+		<div class="page-width">
+			<div id="page-content-inner">
+				
+				<div id="page-content-header">
+					<div class="grid-spaceBetween-middle-noGutter">
+						<div class="col-auto_xs-12">
+							<h1 class="page-title">Marketplace</h1>
+						</div>
+					</div>
+				</div>
+
+
+
+				<div id="page-content-body">
+
+
+					<!-- Page Filtering -->
+					<div class="margin-bottom-m">
+						<div class="grid">
+							<div class="col_xs-12">
+								<div class="form-row margin-bottom-xs">
+									<div class="form-label sr-only">
+										<label for="inline-search">Search</label>
+									</div>
+									<div class="form-input">
+										<span class="input-icon"><em class="las la-search"></em></span>
+										<input class="inputbox inputbox-small " id="inline-search" placeholder="Search Items, Collections and Bundles" />
+									</div>
+								</div>
+							</div>
+							<div class="col-auto_xs-12">
+
+								<div class="grid-noGutter">
+									<div class="col">
+										<!-- Filter -->
+										<button type="button" class="btn-default btn-input margin-right-xs margin-bottom-xs" id="card-filters-button" onclick="toggleFilters('left-col','my-cards-list', 'card-grid', this)">
+											<span class="btn-icon"><em class="las la-filter"></em></span>
+											<span class="btn-text hide-mobile">Filters</span>
+										</button>
+									</div>
+									<div class="col-auto">
+										<div class="form-row inline margin-bottom-xs margin-right-xs">
+											<div class="form-label hide-mobile">
+												<label for="inline-filter-sortby" class="sr-only">Sort By</label>
+											</div>
+											<div class="form-input">
+												<span class="input-icon"><em class="las la-sort-amount-down"></em></span>
+												<select class="inputbox inputbox-small" id="inline-filter-sortby">
+													<option value="most-recent">Ending Soon</option>
+													<option value="most-recent">Most Recent</option>
+													<option value="price-high-low">Price: High-Low</option>
+													<option value="price-low-high">Price: Low-High</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="col-auto">
+										<div class="form-row inline  margin-bottom-xs">
+											<div class="form-label hide-mobile">
+												<label for="view-cards" class="sr-only">View</label>
+											</div>
+											<div class="form-input">
+												<span class="input-icon"><em class="las la-th-large"></em></span>
+												<select class="inputbox inputbox-small no-dropdown-icon" id="view-cards">
+													<option value="12">12</option>
+													<option value="24">24</option>
+													<option value="36">36</option>
+													<option value="48">48</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+
+					
+
+					<!-- Pack Content -->
+					<div class="grid">
+						<div class="col-3_xs-12_md-3_sm-12" id="left-col">
+
+							<div id="card-filters-container" style="display: block;">
+
+								<form action="#" id="form-filter-cards">
+
+									<h3 class="sub-content-title">Filters</h3>
+
+									<div class="form-row">
+										<div class="form-label">
+											<label for="inline-filter-name">Search</label>
+										</div>
+										<div class="form-input">
+											<input type="text" class="inputbox" id="inline-filter-name" placeholder="Enter Player Name..." />
+										</div>
+									</div>
+									<div class="form-row">
+										<div class="form-label">
+											<label for="inline-filter-teams">Teams</label>
+										</div>
+										<div class="form-input">
+											<select class="inputbox" id="inline-filter-teams">
+												<option value="all">All Teams</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-row">
+										<div class="form-label">
+											<label for="inline-filter-collections">Collections</label>
+										</div>
+										<div class="form-input">
+											<select class="inputbox" id="inline-filter-collections">
+												<option value="all">All Collections</option>
+											</select>
+										</div>
+									</div>
+									<fieldset class="form-row-faux">
+										<legend class="form-label-faux">Rarity</legend>
+		  								<div class="form-row no-margin">
+	      									<div class="form-input">
+		  										<label class="form-checkbox-label" for="rarity-common">
+												  	<input type="checkbox" id="rarity-common" name="rarity-group">
+												  	<span class="form-checkbox-label-text">Common</span>
+												</label>
+		  									</div>
+		  								</div>
+		  								<div class="form-row no-margin">
+	      									<div class="form-input">
+		  										<label class="form-checkbox-label" for="rarity-rare">
+												  	<input type="checkbox" id="rarity-rare" name="rarity-group">
+												  	<span class="form-checkbox-label-text">Rare</span>
+												</label>
+		  									</div>
+		  								</div>
+										<div class="form-row no-margin">
+	      									<div class="form-input">
+		  										<label class="form-checkbox-label" for="rarity-legend">
+												  	<input type="checkbox" id="rarity-legend" name="rarity-group">
+												  	<span class="form-checkbox-label-text">Legend</span>
+												</label>
+		  									</div>
+		  								</div>
+									</fieldset>
+
+									<div class="line-divider margin-bottom-s"></div>
+
+									<fieldset class="form-row-faux">
+										<legend class="form-label-faux">Price Range</legend>
+										<div class="grid-noGutter-middle">
+											<div class="col">
+												<div class="grid-noGutter-middle">
+													<div class="col">
+														<div class="form-row no-margin">
+															<div class="form-label sr-only">
+																<label for="inline-filter-price-from">Price From</label>
+															</div>
+															<div class="form-input">
+																<input type="text" class="inputbox full-width" id="inline-filter-price-from" placeholder="Min" />
+															</div>
+														</div>
+													</div>
+													<div class="col-auto"><div class="padding-horizontal-xs">to</div></div>
+													<div class="col">
+														<div class="form-row no-margin">
+															<div class="form-label sr-only">
+																<label for="inline-filter-price-to">Price To</label>
+															</div>
+															<div class="form-input">
+																<input type="text" class="inputbox full-width" id="inline-filter-price-to" placeholder="Max" />
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-auto">
+												<button type="button" class="btn-default btn-black-trans btn-form margin-left-xs">
+													<span class="btn-text">Go</span>
+												</button>
+											</div>
+										</div>
+									</fieldset>
+
+
+									<div class="line-divider margin-bottom-s"></div>
+
+									<fieldset class="form-row-faux">
+										<legend class="form-label-faux">Item Type</legend>
+										<div class="grid-noGutter">
+											<div class="col">
+												<div class="form-row no-margin">
+			      									<div class="form-input">
+				  										<label class="form-checkbox-label" for="item-type-single">
+														  	<input type="checkbox" id="item-type-single" name="item-type">
+														  	<span class="form-checkbox-label-text">Single</span>
+														</label>
+				  									</div>
+				  								</div>
+											</div>
+											<div class="col">
+												<div class="form-row no-margin">
+			      									<div class="form-input">
+				  										<label class="form-checkbox-label" for="item-type-bundle">
+														  	<input type="checkbox" id="item-type-bundle" name="item-type">
+														  	<span class="form-checkbox-label-text">Bundle</span>
+														</label>
+				  									</div>
+				  								</div>
+											</div>			  								
+			  							</div>
+									</fieldset>
+
+									<div class="line-divider margin-bottom-s"></div>
+
+									<fieldset class="form-row-faux">
+										<legend class="form-label-faux">Sale Type</legend>
+
+										<div class="grid-noGutter">
+											<div class="col">
+												<div class="form-row no-margin">
+			      									<div class="form-input">
+				  										<label class="form-checkbox-label" for="sale-type-auction">
+														  	<input type="checkbox" id="sale-type-auction" name="sale-type">
+														  	<span class="form-checkbox-label-text">Auction</span>
+														</label>
+				  									</div>
+				  								</div>
+											</div>
+											<div class="col">
+												<div class="form-row no-margin">
+			      									<div class="form-input">
+				  										<label class="form-checkbox-label" for="sale-type-buy-now">
+														  	<input type="checkbox" id="sale-type-buy-now" name="sale-type">
+														  	<span class="form-checkbox-label-text">Buy Now</span>
+														</label>
+				  									</div>
+				  								</div>
+											</div>
+										</div>
+		  								
+		  								
+									</fieldset>
+
+									
+									<div class="form-action">
+										<div class="grid-center">
+											<div class="col-auto">
+												<button type="reset" class="btn-default btn-red btn-form" disabled="">
+													<span class="btn-text">Clear Filters</span>
+												</button>
+											</div>
+										</div>
+									</div>
+
+								</form>
+							</div>
+							
+						</div>
+						<div class="col-9_xs-12_md-9_sm-12" id="my-cards-list">
+
+							<!-- Marketplace Placeholder -->
+							<!--
+							<div class="placeholder-msg" id="marketplace-coming-soon">
+								<div class="inline-msg-icon"><em class="las la-info-circle"></em></div>
+								<div class="inline-msg-text">
+									<h3 class="inline-msg-title">Marketplace coming soon...</h3>
+									<p>We're adding the final touches to the Marketplace and it will be available very soon. In the meantime you can still continue to purchase new cards and packs through the <a href="store.html">store</a>.</p>
+								</div>
+							</div>
+							-->
+
+							<!-- Marketplace Placeholder -->
+							<!--
+							<div class="placeholder-msg" id="no-items-in-marketplace">
+								<div class="inline-msg-icon"><em class="las la-info-circle"></em></div>
+								<div class="inline-msg-text">
+									<h3 class="inline-msg-title">No Available Cards</h3>
+									<p>There are currently no cards available for purchase in the Marketplace, please check back later.</p>
+								</div>
+							</div>
+							-->
+
+							<!-- Marketplace Cards -->
+							<div class="grid-3_xs-2_md-2-equalHeight" id="card-grid">
+
+								<div class="col">
+									<div class="card-listing-container">
+										<a class="card-listing-item" href="marketplace-listing.html">
+											<span class="card-listing-image-container">
+												<span class="card-listing-image">
+
+													<span class="card-list-overlay">
+														<span class="card-list-details-shading"></span>
+										
+														<span class="card-list-details-rarity type-lvl2">Rare</span>
+														<span class="card-list-details-name">Caleb Williams</span>
+														<span class="card-list-details-team-logo"><img src="images/theme/nwl/teams/Oklahoma.png" alt="Wisconsin Woodchucks" /></span>
+														<span class="card-list-details-distribution"><span class="card-list-details-distribution-value">182</span><span class="card-list-details-distribution-total">500</span></span>
+													</span>
+
+													<img src="images/theme/nwl/caleb_williams.png" alt="Cole Anthony" />
+													<span class="card-listing-shadow">
+														<span class="card-shadow-1"><span></span></span>
+														<span class="card-shadow-2"><span></span></span>
+													</span>
+												</span>
+											</span>
+										</a>
+										<div class="card-listing-text marketplace-layout">
+											<div class="card-listing-circulation"><div class="type-cc" title="Circulating Count: Count may change">CC</div></div>
+											<div class="card-listing-timer" data-timestamp="Dec 2, 2021 13:37:25"><div class="card-timer-output" id="card-timer-1">-</div></div>
+											<span class="card-listing-name"><strong>Caleb Williams</strong></span>
+											<div class="card-listing-serial">#182</div>
+											<div class="card-listing-price">
+												<div class="card-listing-price-label">Top Bid</div>
+												<div class="card-listing-price-value">$39.50 <span class="system-currency">USD</span></div>
+												<div class="card-listing-price-bids"><a href="javascript:void(0);" class="link-bid-history" data-dialog="dialog-bid-history">4 Bids</a></div>
+											</div>
+										</div>
+										<div class="card-listing-button">
+											<button type="button" class="btn-default btn-primary btn-full-width">
+												<span class="btn-text">Bid</span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="card-listing-container">
+										<a class="card-listing-item" href="marketplace-listing.html">
+											<span class="card-listing-image-container">
+												<span class="card-listing-image">
+
+													<span class="card-list-overlay">
+														<span class="card-list-details-shading"></span>
+													
+														<span class="card-list-details-rarity type-lvl2">Rare</span>
+														<span class="card-list-details-name">Noah Sewell</span>
+														<span class="card-list-details-team-logo"><img src="images/theme/nwl/teams/Oregon.png" alt="Lakeshore Chinooks" /></span>
+														<span class="card-list-details-distribution"><span class="card-list-details-distribution-value">1293</span><span class="card-list-details-distribution-total">5000</span></span>
+													</span>
+
+													<img src="images/theme/nwl/noah_sewell.png" alt="JP Feyereisen" />
+													<span class="card-listing-shadow">
+														<span class="card-shadow-1"><span></span></span>
+														<span class="card-shadow-2"><span></span></span>
+													</span>
+											</span>
+										</a>
+										<div class="card-listing-text marketplace-layout">
+											<div class="card-listing-circulation"><div class="type-le" title="Limited Edition: Count is Final">LE</div></div>
+											<div class="card-listing-timer" data-timestamp="Dec 5, 2021 17:05:00"><div class="card-timer-output" id="card-timer-2">-</div></div>
+											<div class="card-listing-name"><a href="marketplace-listing.html"><strong>Noah Sewell</strong></a></div>
+											<div class="card-listing-serial">#1293</div>
+											<div class="card-listing-price">
+												<div class="card-listing-price-label">Price</div>
+												<div class="card-listing-price-value">$795.00 <span class="system-currency">USD</span></div>
+											</div>
+										</div>
+										<div class="card-listing-button">
+											<button type="button" class="btn-default btn-primary btn-full-width" data-dialog="dialog-buy-item">
+												<span class="btn-text">Buy for $795.00</span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="card-listing-container">
+										<a class="card-listing-item" href="marketplace-listing.html">
+											<span class="card-listing-image-container">
+												<span class="card-listing-image">
+
+													<span class="card-list-overlay">
+														<span class="card-list-details-shading"></span>
+											
+														<span class="card-list-details-rarity type-lvl2">Rare</span>
+														<span class="card-list-details-name">C.J. Stroud</span>
+														<span class="card-list-details-team-logo"><img src="images/theme/nwl/teams/Ohio State.png" alt="Madison Mallards" /></span>
+														<span class="card-list-details-distribution"><span class="card-list-details-distribution-value">2</span><span class="card-list-details-distribution-total">1500</span></span>
+													</span>
+
+													<img src="images/theme/nwl/CJ_Stroud.png" alt="Pete Alonso" />
+													<span class="card-listing-shadow">
+														<span class="card-shadow-1"><span></span></span>
+														<span class="card-shadow-2"><span></span></span>
+													</span>
+												</span>
+											</span>
+										</a>
+
+										<div class="card-listing-text marketplace-layout">
+											<div class="card-listing-bundle">
+												<span class="tooltip-container" tabindex="0">
+													<em class="las la-info-circle" aria-hidden="true"></em>
+													<span class="bundle-container"><span class="bundle-icon"><em class="las la-layer-group"></em></span><span class="bundle-text">Bundle</span>
+													<span class="tooltip-text">This item is part of a bundle</span></span>
+												</span>
+											</div>
+											<div class="card-listing-circulation"><div class="type-cc" title="Circulating Count: Count may change">CC</div></div>
+											<div class="card-listing-timer" data-timestamp="Dec 10, 2021 18:00:00"><div class="card-timer-output" id="card-timer-3">-</div></div>
+											<div class="card-listing-name"><a href="marketplace-listing.html"><strong>C.J. Stroud</strong></a></div>
+											<div class="card-listing-serial">#2</div>
+											<div class="card-listing-price">
+												<div class="card-listing-price-label">Top Bid</div>
+												<div class="card-listing-price-value">$25.00 <span class="system-currency">USD</span></div>
+												<div class="card-listing-price-bids"><a href="javascript:void(0);" class="link-bid-history" data-dialog="dialog-bid-history">11 Bids</a></div>
+											</div>
+										</div>
+										<div class="card-listing-button">
+											<button type="button" class="btn-default btn-primary btn-full-width" data-dialog="dialog-bid-item">
+												<span class="btn-text">Bid</span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="card-listing-container">
+										<a class="card-listing-item" href="marketplace-listing.html">
+											<span class="card-listing-image-container">
+												<span class="card-listing-image">
+
+													<span class="card-list-overlay">
+														<span class="card-list-details-shading"></span>
+									
+														<span class="card-list-details-rarity type-lvl2">Rare</span>
+														<span class="card-list-details-name">Bijan Robinson</span>
+														<span class="card-list-details-team-logo"><img src="images/theme/nwl/UNC.png" alt="Waterloo Bucks" /></span>
+														<span class="card-list-details-distribution"><span class="card-list-details-distribution-value">374</span><span class="card-list-details-distribution-total">500</span></span>
+													</span>
+
+													<img src="images/theme/nwl/bijan_robinson.png" alt="Dane Dunning" />
+													<span class="card-listing-shadow">
+														<span class="card-shadow-1"><span></span></span>
+														<span class="card-shadow-2"><span></span></span>
+													</span>
+												</span>
+											</span>
+										</a>
+										<div class="card-listing-text marketplace-layout">
+											<div class="card-listing-circulation"><div class="type-cc" title="Circulating Count: Count may change">CC</div></div>
+											<div class="card-listing-timer" data-timestamp="Dec 14, 2021 23:37:25"><div class="card-timer-output" id="card-timer-4">-</div></div>
+											<div class="card-listing-name"><a href="marketplace-listing.html"><strong>Bijan Robinson</strong></a></div>
+											<div class="card-listing-serial">#374</div>
+											<div class="card-listing-price">
+												<div class="card-listing-price-label">Top Bid</div>
+												<div class="card-listing-price-value">$84.00 <span class="system-currency">USD</span></div>
+												<div class="card-listing-price-bids"><a href="javascript:void(0);" class="link-bid-history" data-dialog="dialog-bid-history">11 Bids</a></div>
+											</div>
+										</div>
+										<div class="card-listing-button">
+											<button type="button" class="btn-default btn-primary btn-full-width" data-dialog="dialog-bid-item">
+												<span class="btn-text">Bid</span>
+											</button>
+										</div>
+									</div>
+								</div>
+								
+
+							</div>
+							<div class="margin-bottom-xl"></div>
+
+							<div class="text-align-center margin-vertical-xl">
+								<button type="button" class="btn-default btn-outline btn-outline" >
+									<span class="btn-text">Load More</span>
+								</button>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+
+
+			</div>
+		</div>
+	</section>
+
+
+	<footer id="footer">
+		<div class="page-width">
+			<div id="footer-inner">
+				<div class="footer-content">
+					<div class="grid-2_sm-1">
+						<div class="col-4_sm-12">
+							<div class="footer-logo">
+								<a href="index.html" title="Click to Go Home">
+									<span class="icon_logo_clipcards_knockout"></span>
+								</a>
+							</div>
+							<div class="footer-partner">
+								<a href="index.html" title="Click to visit NuarcaLabs">
+									<span class="icon_nuarca_labs"></span>
+								</a>
+							</div>
+							<div class="footer-copyright-text">
+								&copy; Copyright 2021 Clip Cards Ltd. <br/>All Rights Reserved
+							</div>
+						</div>
+						<div class="col-8_sm-12">
+							<div id="footer-links-container" class="grid-4_sm-2">
+								<div class="col-3_sm-6">
+									<div class="footer-title">Product</div>
+									<ul class="footer-links list-reset">
+										<li><a href="store.html">Store</a></li>
+										<li><a href="marketplace.html">Marketplace</a></li>
+										<li><a href="press.html">Press</a></li>
+									</ul>
+								</div>
+								<div class="col-3_sm-6">
+									<div class="footer-title">Company</div>
+									<ul class="footer-links list-reset">
+										<li><a href="about.html">About Us</a></li>
+										<li><a href="contact.html">Contact Us</a></li>
+										<li><a href="terms_conditions.html">Terms &amp; Conditions</a></li>
+										<li><a href="privacy.html">Privacy Policy</a></li>
+									</ul>
+								</div>
+								<div class="col-3_sm-6">
+									<div class="footer-title">Help</div>
+									<ul class="footer-links list-reset">
+										<li><a href="how_it_works.html">How it works</a></li>
+										<li><a href="faqs.html">FAQs</a></li>
+										<li><a href="feedback.html">Feedback Policy</a></li>
+									</ul>
+								</div>
+								<div class="col-3_sm-6">
+									<div class="footer-title">Social</div>
+									<ul class="footer-links list-reset">
+										<li><a href="#" class="link-twitter" target="_blank"><span class="lab la-twitter"></span>Twitter</a></li>
+										<li><a href="#" class="link-facebook" target="_blank"><span class="lab la-facebook-f"></span>Facebook</a></li>
+										<li><a href="#" class="link-discord" target="_blank"><span class="lab la-discord"></span>Discord</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer-legal">
+					<p>Officially licensed product. <a href="#">Do Not Sell My Personal Information</a>.</p>
+					<p>This site is protected by reCAPTCHA and the Google <a href="privacy.html">Privacy Policy</a> and <a href="terms_conditions.html">Terms of Service</a> apply.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- Javascript -->
+	<script type="text/javascript" src="js/common.js" ></script>
+	
+	
+	<script type="text/javascript" src="js/auto-complete.min.js" ></script>
+	<script>
+		var demo1 = new autoComplete({
+		    selector: '#inline-filter-name',
+		    minChars: 1,
+		    source: function(term, suggest){
+		    term = term.toLowerCase();
+		    var choices = ['Martin St. Louis','Mario Lemieux','Jaromir Jágr','Martin Brodeur','Nicklas Lidström','Marián Hossa','Chris Pronger','Patrick Sharp','Pavel Datsyuk'];
+		    var suggestions = [];
+		    for (i=0;i<choices.length;i++)
+		        if (~choices[i].toLowerCase().indexOf(term)) suggestions.push(choices[i]);
+		        suggest(suggestions);
+		    }
+		});
+	</script>
+
+
+	<script type="text/javascript" src="js/dialogs.js" ></script>
+	<script>
+		function showBidHistory() {
+			showDialog('dialog-bid-history');
+			closeDialog('dialog-bid-item');
+		}
+
+		function showBid() {
+			showDialog('dialog-bid-item');
+			closeDialog('dialog-bid-history');
+		}
+
+		function showMakeOffer() {
+			showDialog('dialog-make-offer');
+			closeDialog('dialog-bid-item');
+			closeDialog('dialog-buy-item');
+		}
+	</script>	
+
+	<!-- Dialog Buy Item-->
+	<div class="dialog" id="dialog-buy-item">
+	  	<div class="dialog-bg"></div>
+	  	<div class="dialog-container width-s">
+	  		<div class="dialog-header">
+	  			<div class="grid-spaceBetween">
+	  				<div class="col-auto">
+	  					<h1 class="dialog-title">Purchase Item</h1>
+	  				</div>
+	  				<div class="col-auto">
+	  					<button type="button" class="btn-default btn-no-horizontal-padding dialog-exit">
+	  						<span class="btn-icon"><em class="las la-times"></em></span>
+	  						<span class="btn-text sr-only">Close Dialog</span>
+	  					</button>
+	  				</div>
+	  			</div>
+	  		</div>
+	  		<div class="dialog-body">
+	  			<div class="mkt-item-details">
+	  				<div class="mkt-item-image">
+		  				<img src="images/theme/nwl/card-opening-3.jpg" alt="Pete Alonso">
+		  			</div>
+		  			<div class="mkt-item-content">
+			  			<div class="mkt-item-name"><a href="marketplace-listing.html">Pete Alonso</a></div>
+			  			<div class="mkt-item-serial">#2 - <a href="#">View All</a></div>
+			  			<div class="mkt-item-title">Pete Alonso crushes his first HR in the Northwoods League</div>
+			  			<div class="mkt-item-owner">Owned by <a href="#profile">@james_mulholl</a></div>
+			  		</div>
+		  		</div>
+	  			<div class="margin-vertical-m"></div>
+  				<div class="form-row">
+  					<div class="form-label-faux normal">
+  						<div>Time Left</div>
+  					</div>
+  					<div class="form-input">
+  						<div class="inputbox-faux large">
+  							<div class="card-listing-timer" data-timestamp="Aug 20, 2021 17:52:00"><div class="card-timer-output" id="card-timer-2-dialog">-</div></div>
+  						</div>
+  					</div>
+  				</div>
+	  			<div class="grid">
+	  				<div class="col">
+	  					<div class="form-row">
+		  					<div class="form-label-faux normal">
+		  						<div id="label-asking-price">Asking Price</div>
+		  					</div>
+		  					<div class="form-input">
+		  						<div class="inputbox-faux large" aria-labelledby="label-asking-price">$795.00 <span class="system-currency">USD</span></div>
+		  					</div>
+		  				</div>
+	  				</div>
+	  				<div class="col">
+	  					<div class="form-row">
+		  					<div class="form-label-faux normal">
+		  						<div id="label-purchased-price">Purchased Price</div>
+		  					</div>
+		  					<div class="form-input">
+		  						<div class="inputbox-faux large" aria-labelledby="label-purchased-price">$40.00 <span class="system-currency">USD</span></div>
+		  					</div>
+		  				</div>
+		  			</div>
+	  			</div>
+	  			<div class="margin-bottom-m">
+	  				<div class="margin-vertical-s"><a href="#">View Serial Number Sales History</a></div>
+	  				<div class="margin-vertical-s"><a href="#">View Complete Sales History</a></div>
+	  			</div>
+	  		</div>
+	  		<div class="dialog-footer">
+	  			<div class="grid-middle">
+	  				<div class="col">
+	  					<div class="form-row no-margin">
+	  						<label class="form-checkbox-label" for="use-wallet-balance">
+							  	<input type="checkbox" id="use-wallet-balance" name="use-wallet-balance" checked="">
+							  	<span class="form-checkbox-label-text">Use balance in wallet ($0.00)</span>
+							</label>
+	  					</div>
+	  				</div>
+	  				<div class="col-auto"><div class="inputbox-faux"><strong>$0.00</strong></div></div>
+	  			</div>
+	  			<div class="grid-middle">
+	  				<div class="col">Amount Outstanding</div>
+	  				<div class="col-auto"><div class="inputbox-faux"><strong>$795.00</strong></div></div>
+	  			</div>
+	  			<div class="margin-bottom-m"></div>
+	  			<div class="grid-spaceBetween">
+	  				<div class="col-auto">
+	  					<button type="button" class="btn-default btn-black-trans" onclick="showMakeOffer();">
+	  						<span class="btn-text">Make Offer</span>
+	  					</button>
+	  				</div>
+	  				<div class="col-auto">
+	  					<button type="button" class="btn-default btn-primary dialog-exit">
+	  						<span class="btn-text">Buy Now</span>
+	  					</button>
+	  				</div>
+	  			</div>
+	  		</div>	    	
+	  	</div>
+	</div>
+
+	<!-- Dialog Bid Item -->
+	<div class="dialog" id="dialog-bid-item">
+	  	<div class="dialog-bg"></div>
+	  	<div class="dialog-container width-s">
+	  		<div class="dialog-header">
+	  			<div class="grid-spaceBetween">
+	  				<div class="col-auto">
+	  					<h1 class="dialog-title">Bid on Item</h1>
+	  				</div>
+	  				<div class="col-auto">
+	  					<button type="button" class="btn-default btn-no-horizontal-padding dialog-exit">
+	  						<span class="btn-icon"><em class="las la-times"></em></span>
+	  						<span class="btn-text sr-only">Close Dialog</span>
+	  					</button>
+	  				</div>
+	  			</div>
+	  		</div>
+	  		<div class="dialog-body">
+	  			<div class="mkt-item-details">
+	  				<div class="mkt-item-image">
+		  				<img src="images/theme/nwl/card-opening-4.jpg" alt="JP Feyereisen">
+		  			</div>
+		  			<div class="mkt-item-content">
+			  			<div class="mkt-item-name"><a href="marketplace-listing.html">JP Feyereisen</a></div>
+			  			<div class="mkt-item-serial">#1293 - <a href="#">View All</a></div>
+			  			<div class="mkt-item-title">Lakeshore sweeps Wisconsin Rapids in day/night doubleheader</div>
+			  			<div class="mkt-item-owner">Owned by <a href="#profile">@alex_williamson</a></div>
+			  		</div>
+		  		</div>
+	  			<div class="margin-vertical-m"></div>
+  				<div class="form-row">
+  					<div class="form-label-faux normal">
+  						<div>Time Left</div>
+  					</div>
+  					<div class="form-input">
+  						<div class="inputbox-faux large">
+  							<div class="card-listing-timer" data-timestamp="Aug 20, 2021 20:52:00"><div class="card-timer-output" id="card-timer-3-dialog">-</div></div>
+  						</div>
+  					</div>
+  				</div>
+	  			<div class="grid">
+	  				<div class="col">
+	  					<div class="form-row">
+		  					<div class="form-label-faux normal">
+		  						<label for="label-your-bid">Your Bid</label>
+		  					</div>
+		  					<div class="form-input">
+		  						<input type="text" class="inputbox large" id="label-your-bid" value="16.50" placeholder="0.00" />
+		  						<div class="form-helper">Min Bid: $16.50</div>
+		  					</div>
+		  				</div>
+	  				</div>
+	  				<div class="col">
+	  					<div class="form-row">
+		  					<div class="form-label-faux normal">
+		  						<div id="label-current-price">Current Bid</div>
+		  					</div>
+		  					<div class="form-input">
+		  						<div class="inputbox-faux large" aria-labelledby="label-current-price">$15.75 <span class="system-currency">USD</span></div>
+		  						<div class="form-helper"><span class="bid-count">(<a href="javascript:void(0);" onclick="showBidHistory();">6 Bids</a>)</span></div>
+		  					</div>
+		  				</div>
+		  			</div>
+	  			</div>
+	  			<div class="mkt-additional-options"></div>
+
+	  			<div class="margin-bottom-m">
+	  				<div class="margin-vertical-s"><a href="#">View Serial Number Sales History</a></div>
+	  				<div class="margin-vertical-s"><a href="#">View Complete Sales History</a></div>
+	  			</div>
+	  		</div>
+	  		<div class="dialog-footer">
+	  			<div class="grid-middle">
+	  				<div class="col">
+	  					<div class="form-row no-margin">
+	  						<label class="form-checkbox-label" for="use-wallet-balance">
+							  	<input type="checkbox" id="use-wallet-balance" name="use-wallet-balance" checked="">
+							  	<span class="form-checkbox-label-text">Use balance in wallet ($20.00)</span>
+							</label>
+	  					</div>
+	  				</div>
+	  				<div class="col-auto"><div class="inputbox-faux"><strong>$16.50</strong></div></div>
+	  			</div>
+	  			<div class="grid-middle">
+	  				<div class="col">Amount Outstanding</div>
+	  				<div class="col-auto"><div class="inputbox-faux"><strong>$0.00</strong></div></div>
+	  			</div>
+	  			<div class="margin-bottom-m"></div>
+	  			<div class="grid-spaceBetween">
+	  				<div class="col-auto">
+	  				</div>
+	  				<div class="col-auto">
+	  					<button type="button" class="btn-default btn-primary" onclick="showBid();">
+	  						<span class="btn-text">Place Bid</span>
+	  					</button>
+	  				</div>
+	  			</div>
+	  		</div>	    	
+	  	</div>
+	</div>
+
+	<!-- Dialog Offer Item-->
+	<div class="dialog" id="dialog-make-offer">
+	  	<div class="dialog-bg"></div>
+	  	<div class="dialog-container width-s">
+	  		<div class="dialog-header">
+	  			<div class="grid-spaceBetween">
+	  				<div class="col-auto">
+	  					<h1 class="dialog-title">Make Offer</h1>
+	  				</div>
+	  				<div class="col-auto">
+	  					<button type="button" class="btn-default btn-no-horizontal-padding dialog-exit">
+	  						<span class="btn-icon"><em class="las la-times"></em></span>
+	  						<span class="btn-text sr-only">Close Dialog</span>
+	  					</button>
+	  				</div>
+	  			</div>
+	  		</div>
+	  		<div class="dialog-body">
+	  			<div class="mkt-item-details">
+	  				<div class="mkt-item-image">
+		  				<img src="images/theme/nwl/card-opening-3.jpg" alt="Pete Alonso">
+		  			</div>
+		  			<div class="mkt-item-content">
+			  			<div class="mkt-item-name"><a href="marketplace-listing.html">Pete Alonso</a></div>
+			  			<div class="mkt-item-serial">#2 - <a href="#">View All</a></div>
+			  			<div class="mkt-item-title">Pete Alonso crushes his first HR in the Northwoods League</div>
+			  			<div class="mkt-item-owner">Owned by <a href="#profile">@james_mulholl</a></div>
+			  		</div>
+		  		</div>
+	  			<div class="margin-vertical-m"></div>
+  				<div class="form-row">
+  					<div class="form-label-faux normal">
+  						<div>Time Left</div>
+  					</div>
+  					<div class="form-input">
+  						<div class="inputbox-faux large">
+  							<div class="card-listing-timer" data-timestamp="Aug 20, 2021 17:52:00"><div class="card-timer-output" id="card-timer-5-dialog">-</div></div>
+  						</div>
+  					</div>
+  				</div>
+	  			<div class="grid">
+	  				<div class="col">
+	  					<div class="form-row">
+		  					<div class="form-label-faux normal">
+		  						<label for="label-your-offer">Your Offer</label>
+		  					</div>
+		  					<div class="form-input">
+		  						<input type="text" class="inputbox large" id="label-your-offer" value="580.00" placeholder="0.00" />
+		  					</div>
+		  				</div>
+	  				</div>
+	  				<div class="col">
+	  					<div class="form-row">
+		  					<div class="form-label-faux normal">
+		  						<div id="label-purchased-price">Purchased Price</div>
+		  					</div>
+		  					<div class="form-input">
+		  						<div class="inputbox-faux large" aria-labelledby="label-purchased-price">$540.00 <span class="system-currency">USD</span></div>
+		  					</div>
+		  				</div>
+		  			</div>
+	  			</div>
+	  			<div class="mkt-additional-options"></div>
+
+	  			<div class="margin-bottom-m">
+	  				<div class="margin-vertical-s"><a href="#">View Serial Number Sales History</a></div>
+	  				<div class="margin-vertical-s"><a href="#">View Complete Sales History</a></div>
+	  			</div>
+	  		</div>
+	  		<div class="dialog-footer">
+	  			<div class="grid-middle">
+	  				<div class="col">
+	  					<div class="form-row no-margin">
+	  						<label class="form-checkbox-label" for="use-wallet-balance">
+							  	<input type="checkbox" id="use-wallet-balance" name="use-wallet-balance" checked="">
+							  	<span class="form-checkbox-label-text">Use balance in wallet ($20.00)</span>
+							</label>
+	  					</div>
+	  				</div>
+	  				<div class="col-auto"><div class="inputbox-faux"><strong>$20.00</strong></div></div>
+	  			</div>
+	  			<div class="grid-middle">
+	  				<div class="col">Amount Outstanding</div>
+	  				<div class="col-auto"><div class="inputbox-faux"><strong>$560.00</strong></div></div>
+	  			</div>
+	  			<div class="margin-bottom-m"></div>
+	  			<div class="grid-spaceBetween">
+	  				<div class="col-auto">
+	  					<button type="button" class="btn-default btn-black-trans dialog-exit">
+	  						<span class="btn-text">Cancel</span>
+	  					</button>
+	  				</div>
+	  				<div class="col-auto">
+	  					<button type="button" class="btn-default btn-primary dialog-exit">
+	  						<span class="btn-text">Make Offer</span>
+	  					</button>
+	  				</div>
+	  			</div>
+	  		</div>	     	
+	  	</div>
+	</div>
+
+	<!-- Dialog Bid History -->
+	<div class="dialog" id="dialog-bid-history">
+	  	<div class="dialog-bg"></div>
+	  	<div class="dialog-container width-s">
+	  		<div class="dialog-header">
+	  			<div class="grid-spaceBetween">
+	  				<div class="col-auto">
+	  					<h1 class="dialog-title">Bid History</h1>
+	  				</div>
+	  				<div class="col-auto">
+	  					<button type="button" class="btn-default btn-no-horizontal-padding dialog-exit">
+	  						<span class="btn-icon"><em class="las la-times"></em></span>
+	  						<span class="btn-text sr-only">Close Dialog</span>
+	  					</button>
+	  				</div>
+	  			</div>
+	  		</div>
+	  		<div class="dialog-body">
+	  			<div class="mkt-item-details">
+	  				<div class="mkt-item-image">
+		  				<img src="images/theme/nwl/card-opening-4.jpg" alt="JP Feyereisen">
+		  			</div>
+		  			<div class="mkt-item-content">
+			  			<div class="mkt-item-name"><a href="marketplace-listing.html">JP Feyereisen</a></div>
+			  			<div class="mkt-item-serial">#1293 - <a href="#">View All</a></div>
+			  			<div class="mkt-item-title">Lakeshore sweeps Wisconsin Rapids in day/night doubleheader</div>
+			  			<div class="mkt-item-owner">Owned by <a href="#profile">@alex_williamson</a></div>
+			  		</div>
+		  		</div>
+	  			<div class="margin-vertical-m"></div>
+	  			<table class="table-padding-xs">
+	  				<caption class="sr-only">Bid History for JP Feyereisen</caption>
+	  				<thead>
+	  					<tr>
+	  						<th>Bidder</th>
+	  						<th class="text-align-right">Amount</th>
+	  					</tr>
+	  				</thead>
+	  				<tbody>
+	  					<tr>
+	  						<td><a href="#profile" class="bid-username">@alex_williamson</a><div class="bid-timestamp">21 Aug 2021 15:20pm (41m ago)</div></td>
+	  						<td class="text-align-right"><div class="bid-value">$25.00</div></td>
+	  					</tr>
+	  					<tr>
+	  						<td><a href="#profile" class="bid-username">@sam_the_great</a><div class="bid-timestamp">21 Aug 2021 15:20pm (45m ago)</div></td>
+	  						<td class="text-align-right"><div class="bid-value">$18.00</div></td>
+	  					</tr>
+	  					<tr>
+	  						<td><a href="#profile" class="bid-username">@alex_williamson</a><div class="bid-timestamp">21 Aug 2021 15:20pm (51m ago)</div></td>
+	  						<td class="text-align-right"><div class="bid-value">$14.00</div></td>
+	  					</tr>
+	  					<tr>
+	  						<td><a href="#profile" class="bid-username">@sam_the_great</a><div class="bid-timestamp">21 Aug 2021 15:20pm (53m ago)</div></td>
+	  						<td class="text-align-right"><div class="bid-value">$12.00</div></td>
+	  					</tr>
+	  					<tr>
+	  						<td><a href="#profile" class="bid-username">@alex_williamson</a><div class="bid-timestamp">21 Aug 2021 15:20pm (1h 41m ago)</div></td>
+	  						<td class="text-align-right"><div class="bid-value">$6.50</div></td>
+	  					</tr>
+	  					<tr>
+	  						<td><a href="#profile" class="bid-username">@jill_waters</a><div class="bid-timestamp">19 Aug 2021 15:20pm (2d 12h 23m ago)</div></td>
+	  						<td class="text-align-right"><div class="bid-value">$5.00</div></td>
+	  					</tr>
+	  				</tbody>
+	  			</table>
+	  		</div>
+	  		<div class="dialog-footer">
+	  			<div class="grid-spaceBetween">
+	  				<div class="col-auto">
+	  					<button type="button" class="btn-default btn-black-trans" onclick="showMakeOffer();">
+	  						<span class="btn-text">Make Offer</span>
+	  					</button>
+	  				</div>
+	  				<div class="col-auto">
+	  					<button type="button" class="btn-default btn-primary" onclick="showBid();">
+	  						<span class="btn-text">View Item</span>
+	  					</button>
+	  				</div>
+	  			</div>
+	  			</div>
+	  		</div>	  	    	
+	  	</div>
+	</div>
+
+
+</body>
+</html>

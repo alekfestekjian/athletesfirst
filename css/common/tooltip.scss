@@ -1,0 +1,50 @@
+
+
+ .tooltip-container {
+ 	position: relative;
+ 	outline: none;
+ 	cursor: pointer;
+
+ 	.tooltip-text {
+ 		display: none;
+ 		position: absolute;
+ 		left: 50%;
+ 		bottom: calc(100% + 0.5rem);
+ 		line-height: 1.0rem;
+ 		font-size: 0.75rem;
+ 		padding:0.25rem 0.125rem;
+ 		background-color: $white;
+ 		color: $black;
+ 		@include translate(-50%,0);
+ 		min-width: 8rem;
+ 		max-width: 16rem;
+ 		text-align: center;
+ 		@include border-radius(0.25rem);
+ 		@include box-shadow(0, 0.25rem, 0.25rem, rgba($black,0.1));
+
+ 		&:after {
+ 			display: none;
+ 			content: '';
+ 			width: 0; 
+			height: 0; 
+			border-left: 0.5rem solid transparent;
+			border-right: 0.5rem solid transparent;
+			border-top: 0.5rem solid $white;
+			position: absolute;
+			bottom:-0.5rem;
+			left: 50%;
+ 			@include translate(-50%,0);
+ 		}
+ 	}
+
+ 	&:focus, &:hover {
+ 		// border-bottom: 1px dotted $black;
+ 		.tooltip-text {
+ 			display: block;
+
+	 		&:after {
+	 			display: block;
+	 		}
+ 		}
+ 	}
+ }
